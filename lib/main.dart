@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pesawat/cubit/auth_cubit.dart';
 import 'package:pesawat/cubit/page_cubit.dart';
 import 'package:pesawat/ui/pages/bonus_page.dart';
 import 'package:pesawat/ui/pages/detail_page.dart';
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => PageCubit(),
+        ),
+        BlocProvider(
+          create: (context) => AuthCubit(),
         )
       ],
       child: MaterialApp(
@@ -32,7 +36,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => const SplashPage(),
           '/get-started': (context) => const GetStartedPage(),
-          '/sign-up': (context) => const SignUpPage(),
+          '/sign-up': (context) => SignUpPage(),
           '/bonus': (context) => const BonusPage(),
           '/main': (context) => const MainPage(),
           '/detail': (context) => const DetailPage(),

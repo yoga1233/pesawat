@@ -224,7 +224,10 @@ class DetailPage extends StatelessWidget {
             ),
             // NOTE: Price and Book Button
             Container(
-              margin: const EdgeInsets.only(top: 31),
+              margin: const EdgeInsets.only(
+                top: 31,
+                bottom: 50,
+              ),
               child: Row(
                 children: [
                   Expanded(
@@ -274,12 +277,14 @@ class DetailPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body: Stack(
-        children: [
-          background(),
-          customShadow(),
-          content(),
-        ],
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            background(),
+            customShadow(),
+            content(),
+          ],
+        ),
       ),
     );
   }
