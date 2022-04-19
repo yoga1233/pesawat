@@ -6,6 +6,7 @@ import 'package:pesawat/ui/pages/bonus_page.dart';
 import 'package:pesawat/ui/pages/detail_page.dart';
 import 'package:pesawat/ui/pages/get_started_page.dart';
 import 'package:pesawat/ui/pages/main_page.dart';
+import 'package:pesawat/ui/pages/sign_in_page.dart';
 import 'package:pesawat/ui/pages/sign_up_page.dart';
 import 'package:pesawat/ui/pages/splash_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
           '/bonus': (context) => const BonusPage(),
           '/main': (context) => const MainPage(),
           '/detail': (context) => const DetailPage(),
+          '/sign-in': (context) => SignInPage(),
         },
       ),
     );
