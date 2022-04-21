@@ -4,9 +4,14 @@ import 'package:pesawat/ui/pages/checkout_page.dart';
 import 'package:pesawat/ui/widgets/custom_button.dart';
 import 'package:pesawat/ui/widgets/seat_item.dart';
 
-class ChooseSeat extends StatelessWidget {
+class ChooseSeat extends StatefulWidget {
   const ChooseSeat({Key? key}) : super(key: key);
 
+  @override
+  State<ChooseSeat> createState() => _ChooseSeatState();
+}
+
+class _ChooseSeatState extends State<ChooseSeat> {
   @override
   Widget build(BuildContext context) {
     Widget tittle() {
@@ -168,9 +173,11 @@ class ChooseSeat extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   const SeatItem(
-                    status: 2,
+                    id: 'A1',
                   ),
-                  const SeatItem(status: 2),
+                  const SeatItem(
+                    id: 'B1',
+                  ),
                   SizedBox(
                     width: 48,
                     height: 48,
@@ -181,8 +188,12 @@ class ChooseSeat extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SeatItem(status: 0),
-                  const SeatItem(status: 2),
+                  const SeatItem(
+                    id: 'C1',
+                  ),
+                  const SeatItem(
+                    id: 'D1',
+                  ),
                 ],
               ),
             ),
@@ -194,8 +205,12 @@ class ChooseSeat extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  const SeatItem(status: 0),
-                  const SeatItem(status: 0),
+                  const SeatItem(
+                    id: 'A2',
+                  ),
+                  const SeatItem(
+                    id: 'B2',
+                  ),
                   SizedBox(
                     width: 48,
                     height: 48,
@@ -206,8 +221,12 @@ class ChooseSeat extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SeatItem(status: 0),
-                  const SeatItem(status: 2),
+                  const SeatItem(
+                    id: 'C2',
+                  ),
+                  const SeatItem(
+                    id: 'D2',
+                  ),
                 ],
               ),
             ),
@@ -219,8 +238,12 @@ class ChooseSeat extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  const SeatItem(status: 1),
-                  const SeatItem(status: 1),
+                  const SeatItem(
+                    id: 'A3',
+                  ),
+                  const SeatItem(
+                    id: 'B3',
+                  ),
                   SizedBox(
                     width: 48,
                     height: 48,
@@ -231,8 +254,12 @@ class ChooseSeat extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SeatItem(status: 0),
-                  const SeatItem(status: 0),
+                  const SeatItem(
+                    id: 'C3',
+                  ),
+                  const SeatItem(
+                    id: 'D3',
+                  ),
                 ],
               ),
             ),
@@ -244,8 +271,12 @@ class ChooseSeat extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  const SeatItem(status: 0),
-                  const SeatItem(status: 2),
+                  const SeatItem(
+                    id: 'A4',
+                  ),
+                  const SeatItem(
+                    id: 'B5',
+                  ),
                   SizedBox(
                     width: 48,
                     height: 48,
@@ -256,8 +287,12 @@ class ChooseSeat extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SeatItem(status: 0),
-                  const SeatItem(status: 0),
+                  const SeatItem(
+                    id: 'C4',
+                  ),
+                  const SeatItem(
+                    id: 'D4',
+                  ),
                 ],
               ),
             ),
@@ -269,8 +304,12 @@ class ChooseSeat extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  const SeatItem(status: 0),
-                  const SeatItem(status: 0),
+                  const SeatItem(
+                    id: 'A5',
+                  ),
+                  const SeatItem(
+                    id: 'B5',
+                  ),
                   SizedBox(
                     width: 48,
                     height: 48,
@@ -281,8 +320,12 @@ class ChooseSeat extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SeatItem(status: 2),
-                  const SeatItem(status: 0),
+                  const SeatItem(
+                    id: 'C5',
+                  ),
+                  const SeatItem(
+                    id: 'D5',
+                  ),
                 ],
               ),
             ),
