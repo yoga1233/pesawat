@@ -18,7 +18,7 @@ class SeatItem extends StatefulWidget {
 class _SeatItemState extends State<SeatItem> {
   @override
   Widget build(BuildContext context) {
-    bool isSelected = context.read<SeatCubit>().isSelected(widget.id);
+    bool isSelected = context.watch<SeatCubit>().isSelected(widget.id);
     backgroundColor() {
       if (!widget.isAvailable) {
         return kUnavailableColor;

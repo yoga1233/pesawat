@@ -27,7 +27,7 @@ class CustomBottomNavigationItem extends StatelessWidget {
             imageUrl,
             width: 24,
             height: 24,
-            color: context.read<PageCubit>().state == index
+            color: context.watch<PageCubit>().state == index
                 ? kPrimaryColor
                 : kGreyColor,
           ),
@@ -36,7 +36,7 @@ class CustomBottomNavigationItem extends StatelessWidget {
             width: 30,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(17),
-              color: context.read<PageCubit>().state == index
+              color: context.watch<PageCubit>().state == index
                   ? kPrimaryColor
                   : kTransparanColor,
             ),

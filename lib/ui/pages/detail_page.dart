@@ -268,7 +268,7 @@ class DetailPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: ((context) => const ChooseSeat()),
+                          builder: ((context) => ChooseSeat(destination)),
                         ),
                       );
                     },
