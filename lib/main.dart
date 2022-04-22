@@ -4,6 +4,7 @@ import 'package:pesawat/cubit/auth_cubit.dart';
 import 'package:pesawat/cubit/destination_cubit.dart';
 import 'package:pesawat/cubit/page_cubit.dart';
 import 'package:pesawat/cubit/seat_cubit.dart';
+import 'package:pesawat/cubit/transaction_cubit.dart';
 import 'package:pesawat/ui/pages/bonus_page.dart';
 import 'package:pesawat/ui/pages/get_started_page.dart';
 import 'package:pesawat/ui/pages/main_page.dart';
@@ -11,6 +12,7 @@ import 'package:pesawat/ui/pages/sign_in_page.dart';
 import 'package:pesawat/ui/pages/sign_up_page.dart';
 import 'package:pesawat/ui/pages/splash_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:pesawat/ui/pages/succes_checkout_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,6 +39,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => SeatCubit(),
+        ),
+        BlocProvider(
+          create: (context) => TransactionCubit(),
         )
       ],
       child: MaterialApp(
@@ -48,6 +53,7 @@ class MyApp extends StatelessWidget {
           '/bonus': (context) => const BonusPage(),
           '/main': (context) => const MainPage(),
           '/sign-in': (context) => SignInPage(),
+          '/success': (context) => const SuccessCheckoutPage(),
         },
       ),
     );

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pesawat/cubit/page_cubit.dart';
 import 'package:pesawat/shared/theme.dart';
 import 'package:pesawat/ui/widgets/custom_button.dart';
 
@@ -47,7 +49,11 @@ class SuccessCheckoutPage extends StatelessWidget {
                 tittle: 'My Booking',
                 margin: const EdgeInsets.only(top: 50, bottom: 150),
                 width: 220,
-                onPress: () {})
+                onPress: () {
+                  context.read<PageCubit>().setPage(1);
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/main', (route) => false);
+                })
           ],
         ),
       ),

@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:pesawat/models/destination_model.dart';
 
 class TransactionModel extends Equatable {
+  final String id;
   final DestinationModel destination;
   final int amountOfTraveler;
   final String selectedSeat;
@@ -13,6 +14,7 @@ class TransactionModel extends Equatable {
 
   const TransactionModel(
       {required this.destination,
+      this.id = '',
       this.amountOfTraveler = 0,
       this.selectedSeat = '',
       this.insurance = false,
@@ -20,6 +22,21 @@ class TransactionModel extends Equatable {
       this.vat = 0.0,
       this.price = 0,
       this.grandTotal = 0});
+
+  factory TransactionModel.fromJson(String id, Map<String, dynamic> json) =>
+      TransactionModel(
+        id: id,
+        destination: DestinationModel.fromJson(
+            json['destination']['id'], json['destination']),
+        amountOfTraveler: json['amountOfTraveler'],
+        selectedSeat: json['selectedSeat'],
+        insurance: json['insurance'],
+        refundable: json['refundable'],
+        vat: json['vat'],
+        price: json['price'],
+        grandTotal: json['grandTotal'],
+      );
+
   @override
   List<Object?> get props => [
         destination,

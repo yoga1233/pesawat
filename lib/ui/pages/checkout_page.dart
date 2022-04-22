@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:pesawat/cubit/auth_cubit.dart';
+import 'package:pesawat/cubit/transaction_cubit.dart';
 import 'package:pesawat/models/transaction_model.dart';
 import 'package:pesawat/shared/theme.dart';
 import 'package:pesawat/ui/pages/succes_checkout_page.dart';
@@ -317,28 +318,46 @@ class CheckoutPage extends StatelessWidget {
       );
     }
 
+    Widget buttonPay() {
+      return BlocConsumer<TransactionCubit, TransactionState>(
+        listener: (context, state) {
+          if (state is TransactionSuccess) {
+            Navigator.pushNamedAndRemoveUntil(
+                context, '/success', (route) => false);
+          } else if (state is TransactionFailed) {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(state.eror),
+              backgroundColor: Colors.amber,
+            ));
+          }
+        },
+        builder: (context, state) {
+          if (state is TransactionLoading) {
+            // ignore: prefer_const_constructors
+            return Container(
+              margin: const EdgeInsets.only(top: 30),
+              alignment: Alignment.center,
+              child: const CircularProgressIndicator(),
+            );
+          }
+
+          return CustomButton(
+              tittle: 'Pay Now',
+              margin: const EdgeInsets.only(top: 30),
+              onPress: () {
+                context.read<TransactionCubit>().createTransaction(transaction);
+              });
+        },
+      );
+    }
+
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: ListView(
         padding: const EdgeInsets.symmetric(
           horizontal: 24,
         ),
-        children: [
-          route(),
-          detail(),
-          paymentDetails(),
-          CustomButton(
-              tittle: 'Pay Now',
-              margin: const EdgeInsets.only(top: 30),
-              onPress: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SuccessCheckoutPage(),
-                  ),
-                );
-              })
-        ],
+        children: [route(), detail(), paymentDetails(), buttonPay()],
       ),
     );
   }
