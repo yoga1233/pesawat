@@ -11,7 +11,7 @@ class TransactionService {
         {
           'destination': transaction.destination.toJson(),
           'amountOfTraveler': transaction.amountOfTraveler,
-          'selectedseat': transaction.selectedSeat,
+          'selectedSeat': transaction.selectedSeat,
           'insurance': transaction.insurance,
           'refundable': transaction.refundable,
           'vat': transaction.vat,

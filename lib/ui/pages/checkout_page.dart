@@ -5,7 +5,6 @@ import 'package:pesawat/cubit/auth_cubit.dart';
 import 'package:pesawat/cubit/transaction_cubit.dart';
 import 'package:pesawat/models/transaction_model.dart';
 import 'package:pesawat/shared/theme.dart';
-import 'package:pesawat/ui/pages/succes_checkout_page.dart';
 import 'package:pesawat/ui/widgets/booking_detail_items.dart';
 import 'package:pesawat/ui/widgets/custom_button.dart';
 
