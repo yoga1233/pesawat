@@ -35,6 +35,7 @@ class CustomTextFormField extends StatelessWidget {
           TextFormField(
             controller: controller,
             decoration: InputDecoration(
+                labelText: 'email',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(18),
                 ),
